@@ -1,6 +1,6 @@
 $(function() {
     //make connection
-    var socket = io.connect("http://localhost:5000");
+    var socket = io.connect("https://serene-falls-19141.herokuapp.com/");
 
     //buttons and inputs
     var message = $("#message");
