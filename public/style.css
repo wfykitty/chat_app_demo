@@ -21,7 +21,7 @@ body {
 
 header {
     text-align: center;
-    background-color: #BCA9F5;
+    background-color: rgb(94, 165, 245);
 }
 
 h1 {
@@ -41,9 +41,13 @@ div#change_username {
 
 section#chatroom {
     border: 5px inset #8258FA;
-    height: 60%;
+    height: 70%;
     overflow: auto;
 }
+
+body {
+    background-color: lightblue;
+  }
 
 section#input_zone {
     height: 7%;

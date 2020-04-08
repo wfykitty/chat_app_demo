@@ -13,7 +13,7 @@
 
   <body>
     <header>
-      <h1>Super Chat</h1>
+      <h1>Let's Chat</h1>
     </header>
 
     <section>
@@ -42,10 +42,39 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="chat.js"></script>
     
-    
-    <section class="row">
+    ------------Below is for admin -----------
+    <br>   </br>
+    <section class="row"></section>
     <button id="event_log">Event log</button>
+    <button id="chatlog">Chat History log</button>
    
+    <section id='historyTab' style="display:none;">
+      <table border="1" style = "padding:50px;">
+        <thead>
+          <th>Sender</th>
+          <th>Message</th>
+          <th>Room</th>
+          <th>Date</th>
+        </thead>
+        <tbody id='historyChat'>
+
+        </tbody>
+      </table>
+    </section>
+
+    <section id='eventTab' style="display:none;">
+      <table border="1" style = "padding:50px;">
+        <thead>
+          <th>Error Type</th>
+          <th>Error Message</th>
+          <th>Date</th>
+        </thead>
+        <tbody id='eventChat'>
+
+        </tbody>
+      </table>
+    </section>
+
   </div>
 
 
