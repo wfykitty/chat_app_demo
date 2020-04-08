@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const moment = require("moment");
 const historyModel = require("./models/chathistory");
 const eventlogModel = require("./models/eventlog");
-
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 const connectionString =
@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 //Listen on port 5000
-server = app.listen(5000, () => console.log("Server connected."));
+server = app.listen(PORT, () => console.log("Server connected."));
 
 //socket.io instantiation
 const io = require("socket.io")(server);
