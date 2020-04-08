@@ -1,18 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let chatHistory = new Schema({ 
-    sender: { type: String
-    },
+let chatHistory = new Schema({
+    sender: { type: String },
     date: {
-      type: Date
+        type: Date
     },
     room: {
-      type: String
+        type: String
     },
     message: {
-      type: String
+        type: String
     }
-  },
-);
+});
 module.exports = mongoose.model("History", chatHistory);

@@ -116,14 +116,11 @@ io.on("connection", socket => {
             })
             .sort("-date")
             .limit(10);
-        // io.sockets.emit("ChatLog1", {
-        //     user: room1ChatLog.sender,
-        //     message: room1ChatLog.message
-        // });
-        //broadcast to room
-        
-            io.to("room1Bth")
-            .emit("new_message", "User has joined the room 1 chat");
+
+        io.to("room1Bth").emit(
+            "new_message",
+            "User has joined the room 1 chat"
+        );
     });
 
     // listen to room 2
@@ -144,58 +141,57 @@ io.on("connection", socket => {
                         let _ = { user: x.sender, message: x.message };
                         return _;
                     });
-                    console.log("******Chat of room2****")
-                    console.log(data)
-                    io.to('room2Bth').emit("ChatLog2", data);
+                    console.log("******Chat of room2****");
+                    console.log(data);
+                    io.to("room2Bth").emit("ChatLog2", data);
                 } else {
                     throw err;
                 }
             })
             .sort("-date")
             .limit(10);
-        // io.sockets.emit("ChatLog2", {
-        //     user: room1ChatLog.sender,
-        //     message: room1ChatLog.message
-        // });
-        //broadcast to room
-        
-            io.to("room2Bth")
-            .emit("new_message", "User has joined the room 2 chat");
 
-            
+        //broadcast to room
+
+        io.to("room2Bth").emit(
+            "new_message",
+            "User has joined the room 2 chat"
+        );
     });
 
     //listen event log & history log
     socket.on("eventLog", () => {
-        eventlogModel.find({}, function(err, docs) {
-            if (!err) {
-                console.log(docs);
-                socket.emit('eventHistory', docs)
-            } else {
-                throw err;
-            }
-        }).limit(10)
-        .sort("-date")
+        eventlogModel
+            .find({}, function(err, docs) {
+                if (!err) {
+                    console.log(docs);
+                    socket.emit("eventHistory", docs);
+                } else {
+                    throw err;
+                }
+            })
+            .limit(10)
+            .sort("-date");
     });
 
     socket.on("chatlog", () => {
-        historyModel.find({}, function(err, docs) {
-            if (!err) {
-                console.log(docs);
-                socket.emit('chatHistory', docs)
-            } else {
-                throw err;
-            }
-        }
-        
-        ).limit(10)
-        .sort("-date")
+        historyModel
+            .find({}, function(err, docs) {
+                if (!err) {
+                    console.log(docs);
+                    socket.emit("chatHistory", docs);
+                } else {
+                    throw err;
+                }
+            })
+            .limit(10)
+            .sort("-date");
     });
 
     //listen on new_message
     socket.on("new_message", data => {
         //broadcast the new message
-        console.log(data.room)
+        console.log(data.room);
         async function savedMessage() {
             const chats = new historyModel({
                 sender: socket.username,
@@ -216,6 +212,4 @@ io.on("connection", socket => {
     socket.on("typing", data => {
         socket.broadcast.emit("typing", { username: socket.username });
     });
-
-    // io.sockets.emit('new_message', {message : data.message, username : socket.username});
 });

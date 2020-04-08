@@ -5,6 +5,12 @@ Team Members:
                 Feiya Wang 101036160
                 Zakariya Jasat 101092428
                 
+Heroku URL: 
+                https://serene-falls-19141.herokuapp.com/
+                
+                
+        ** ALTERNATIVELY **
+        ===================
                 
 # Please install dependencies by running:
                                                 "npm i"
