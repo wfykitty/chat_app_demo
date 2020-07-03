@@ -24,13 +24,13 @@ Heroku URL:
 
     ** ALTERNATIVELY **
     ===================              
-# Please install dependencies by running:
+- Please install dependencies by running:
                                                 "npm i"
 
-# Start application by runing:
+- Start application by runing:
                                                 "node app.js"
 
-# View app at:
+- View app at:
                                                 "https://localhost:5000"
 
 
