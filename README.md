@@ -1,10 +1,21 @@
-Simple Web Based Chat for Fullstack Development III - Blockchain Development - GBC
+Simple Web Based Chat for Fullstack Development III - Blockchain Development  
+
+# Chat App Demo
+
+This is chat application with message and events history using Node.js, Socket.IO and ReactJS.
+- change chat room
+- chat and display "__ is typing"
+- display chat and log history
+- change name
+
+### 
+
+![](./demo.gif)
+
+---
+
 ==================================================================================
 
-Team Members:
-                Feiya Wang 101036160
-                Zakariya Jasat 101092428
-                
 ## To run the whole project, please refer to README.md in FS4_Project
 
 Heroku URL: 
