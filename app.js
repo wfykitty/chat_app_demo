@@ -28,10 +28,24 @@ app.set("view engine", "ejs");
 //middlewares
 app.use(express.static("public"));
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 //routes
 app.get("/", (req, res) => {
     res.render("index");
 });
+
+app.get("/api/chats", async(req,res)=>{
+    const chats = await historyModel.find();
+    res.send(chats);
+})
+app.get("/api/logs", async(req,res)=>{
+    const logs = await eventlogModel.find();
+    res.send(logs);
+})
 
 //Listen on port 5000
 server = app.listen(PORT, () => console.log("Server connected."));

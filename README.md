@@ -5,13 +5,14 @@ Team Members:
                 Feiya Wang 101036160
                 Zakariya Jasat 101092428
                 
+## To run the whole project, please refer to README.md in FS4_Project
+
 Heroku URL: 
                 https://serene-falls-19141.herokuapp.com/
                 
-                
-        ** ALTERNATIVELY **
-        ===================
-                
+
+    ** ALTERNATIVELY **
+    ===================              
 # Please install dependencies by running:
                                                 "npm i"
 
@@ -20,3 +21,5 @@ Heroku URL:
 
 # View app at:
                                                 "https://localhost:5000"
+
+
