@@ -14,9 +14,8 @@ This is chat application with message and events history using Node.js, Socket.I
 
 ---
 
-=================================================================
 
-## To run the whole project, please refer to README.md in FS4_Project
+## To run the whole project, please refer to README.md in Chat_App_Admin
 
 Heroku URL: 
                 https://serene-falls-19141.herokuapp.com/
